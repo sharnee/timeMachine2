@@ -51,7 +51,7 @@ var TimeMachineApp = React.createClass({
 				<div className = 'year'>{this.state.isTime}</div>
 				<div className = 'buttonContainer'>
 					<div onClick = {this._handlePast} style = {goingPast} className = 'past time'>Past</div>
-					<div onClick = {this._handleStop} style = {goingStop} className = 'stop time'>Stop</div>
+					<div onClick = {this._handleStop} style = {goingStop} className = 'stop time'>STOP</div>
 					<div onClick = {this._handleFuture} style = {goingFuture} className = 'future time'>Future</div>
 				</div>
 			</div>
