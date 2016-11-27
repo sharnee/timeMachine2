@@ -3,23 +3,23 @@ import Store from './store'
 var ACTIONS = {
 	
 	handlePast: function(){
-		var tickBack = ()=>{
-			Store._set({
-				isTime: STORE._get('isTime') - 1
-			})
-		} 
 
-		STORE._set({
-			direction: 'backwards'
-		})
+		var tickBackward = () => { //function to decrement the year by 1 
+				Store._set({
+					year: Store._get('isTime') - 1
+			})
+		}
+		var intervalId = setInterval(tickBackward)
+
+		Store._set({ direction: 'backwards' })
 	},
 	
 	handleStop: function(){
-		Store._set({isTime: 2016, direction: 'stop' }) 
+		Store._set({ direction: 'stop' }) 
 	}, 
 	
 	handleFuture: function(){
-		Store._set({isTime: 2016, direction: 'forward' }) 
+		Store._set({direction: 'forward' }) 
 	}, 
 }
 

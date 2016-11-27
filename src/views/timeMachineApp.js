@@ -7,7 +7,8 @@ var TimeMachineApp = React.createClass({
 	componentWillMount: function(){
 		console.log('mounting')
 		Store.on('updating', ()=>{
-			this.setState(Store._get())
+			//make sure that when mounting the component with original data to invoke the correct data function which in this case is the _getData function. This function calls the original dataset.
+			this.setState(Store._getData())
 		})
 
 	}, 
@@ -33,7 +34,7 @@ var TimeMachineApp = React.createClass({
 	}, 
 	render: function(){
 		var goingPast = {
-			'background': this.state.direction === 'backwards'? 'red' : 'grey'
+			'background': this.state.direction === 'backwards'? 'blue' : 'grey'
 		}
 		
 		var goingStop = {
@@ -41,7 +42,7 @@ var TimeMachineApp = React.createClass({
 		}
 		
 		var goingFuture = {
-			'background': this.state.direction === 'forward'? 'red' : 'grey'
+			'background': this.state.direction === 'forward'? 'green' : 'grey'
 		}
 		
 		return(
