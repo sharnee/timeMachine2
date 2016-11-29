@@ -12,7 +12,7 @@ var ACTIONS = {
 			})
 		}
 		
-		var backwardsId = setInterval(tickBackward, 1000)
+		var backwardsId = setInterval(tickBackward, 300)
 		Store._set({ direction: 'backwards', intervalId: backwardsId })
 	},
 	
@@ -28,7 +28,7 @@ var ACTIONS = {
 					isTime: Store._get('isTime') + 1
 			})
 		}
-		var forwardId = setInterval(tickForward, 1000)
+		var forwardId = setInterval(tickForward, 300)
 		Store._set({direction: 'forward', intervalId: forwardId }) 
 	}, 
 }
