@@ -1,12 +1,13 @@
 import Backbone from 'backbone'
 import _ from 'underscore'
 
-window.Store = Store
+
 
 var Store = _.extend(Backbone.Events, {
 	data: {
 		isTime: 2016, 
-		direction: null
+		direction: null, 
+	
 	}, 
 	_getData: function(){
 		// console.log('this is my data', this.data)
@@ -15,7 +16,7 @@ var Store = _.extend(Backbone.Events, {
 	_get: function(key){
 		console.log(this.data[key], 'this is the key')
 		
-		return this.data.direction[key]
+		return this.data[key]
 	}, 
 
 	_emitChange: function (){
@@ -28,5 +29,7 @@ var Store = _.extend(Backbone.Events, {
 	}
 
 })
+
+window.Store = Store
 
 export default Store
